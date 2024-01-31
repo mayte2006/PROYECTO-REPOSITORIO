@@ -1,0 +1,112 @@
+Algoritmo bucle 
+	Definir costoentrada Como Real
+	Definir día,edad, apellidos, cedula, estatura  Como Entero
+	Definir sexo Como Caracter
+	Definir descuento, montodescuento, costofinal Como Real
+	
+	costoentrada<- 30 
+	Repetir 
+		Escribir "ingresar edad"
+		Leer edad
+	Hasta Que edad >= 0 y edad <= 90
+	
+	Repetir
+		Escribir "INGRESE SEXO"
+		Escribir "[M] MASCULINO"
+		Escribir "[F]FEMENINO"
+		Leer sexo
+	Hasta Que sexo = "M" o sexo = "F"
+	
+	Repetir
+		Escribir "ingrese"
+		Escribir "[SD] SIN DEUDA"
+		Escribir "[CD] CON DEUDA"
+		Leer DEUDA
+	Hasta Que DEUDA = "SD" o DEUDA = "CD"
+	
+	
+	Repetir
+		Escribir "ingrese los dias de la semana"
+		Escribir "[1] LUNES"
+		Escribir "[2] MARTES"
+		Escribir "[3] MIERCOLES"
+		Escribir "[4] JUEVES"
+		Escribir "[5] VIERNES"
+		Escribir "[6] SABADO"
+		Escribir "[7] DOMINGO"
+		Leer dia
+	Hasta Que día >= 1 Y día <= 7 
+	
+	Repetir
+		Escribir "apellidos"
+		Escribir "[1] A-D"
+		Escribir "[2] E-L"
+		Escribir "[3] M-P"
+		Escribir "[4] Q-T"
+		Escribir "[5] U-W"
+		Escribir "[6] X-Z"
+		Leer apellidos
+	Hasta Que apellidos >= 1 Y apellidos<= 6 
+	
+	
+	Repetir
+		Escribir "cedulas"
+		Escribir "[1] 0-1"
+		Escribir "[2] 2-3"
+		Escribir "[3] 4-5"
+		Escribir "[4] 6-7"
+		Escribir "[5] 8"
+		Escribir "[6] 9"
+		Leer cedula
+	Hasta Que cedula >= 1 Y cedula <= 6 
+	
+	Repetir
+		Escribir "estatura"
+		Escribir "[1] 1,00-1,20"
+		Escribir "[2] 1,21-1,35"
+		Escribir "[3] 1,36-1,60"
+		Escribir "[4] 1,61-1,70"
+		Escribir "[5] 1,71-1,81"
+		Escribir "[6] 1,82"
+		Leer estatura
+	Hasta Que estatura >= 1 Y estatura <= 6 
+	
+
+	descuento <- 0
+	
+	si edad >= 0 y edad <= 10 y sexo = "M" y apellidos >=  1 y cedula >= 0 Y cedula <= 1 y estatura >= 1 Y estatura <= 6 Y día = 1 Entonces
+		descuento <- 0.20 
+	FinSi
+	
+	si edad >= 11 y edad <= 30 y sexo = "F" y apellidos >=  2 y cedula >= 2 Y cedula <= 3 y estatura >= 1 Y estatura <= 6 Y día = 2 Entonces
+		descuento <- 0.50
+	FinSi
+	
+	si edad >= 31 y edad <= 50 y sexo = "M" y apellidos >=  3 y cedula >= 4 Y cedula <= 5 y estatura >= 1 Y estatura <= 6 Y (día = 3 O día = 4) Entonces
+		descuento <- 0.30 
+	FinSi
+	
+	si edad >= 51 y edad <= 90 y sexo = "F" y apellidos >=  4 y cedula >= 6 Y cedula <= 7 y estatura >= 1 Y estatura <= 6 Y día = 5 Entonces
+		descuento <- 0.40 
+	FinSi
+	
+	si edad >= 61 y edad <= 70 y sexo = "F" y apellidos >=  5 y cedula >= 8 y estatura >= 1 Y estatura <= 6 Y día = 6 Entonces
+		descuento <- 2 
+	FinSi
+	
+	si edad >= 71 y edad <= 80 y sexo = "F" y apellidos >=  6 y cedula >= 9 y estatura >= 1 Y estatura <= 6 Y día = 7 Entonces
+		descuento <- 5
+	FinSi
+	
+	montodescuento <- costoentrada * descuento
+	costofinal <- costoentrada - montodescuento
+	
+	Escribir "precio regular: S/", costoentrada
+	Escribir "el porcentaje del descuento es:", descuento* 100, "%"
+	Escribir "descuento es: S/", montodescuento
+	Escribir "costo final: S/", costofinal
+	
+	
+	
+	
+FinAlgoritmo
